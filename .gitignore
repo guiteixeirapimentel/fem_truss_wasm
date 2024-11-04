@@ -1,0 +1,3 @@
+build/*
+.vscode/*
+html/js/node_modules/*
