@@ -1,14 +1,15 @@
 #pragma once
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #ifndef WASM
 #include <stdio.h>
-#define print(...) printf(__VA_ARGS__)
+#define print(str) printf("%s\n", str)
 #else
-void print(const char*);
+void print(const char *);
 #endif
 
 #ifdef __cplusplus

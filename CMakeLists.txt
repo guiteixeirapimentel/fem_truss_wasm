@@ -27,8 +27,12 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
 
-add_compile_options(-Wall -Wextra -pedantic -Werror)
+# add_compile_options(-Wall -Wextra -pedantic -Werror)
 
 add_subdirectory (src)
-# add_subdirectory (tests)
+
+if(NOT DEFINED WASM)
+  add_subdirectory (tests)
+endif()
+
 # add_subdirectory(dependencies)
