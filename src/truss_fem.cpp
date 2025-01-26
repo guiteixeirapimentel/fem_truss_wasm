@@ -432,9 +432,7 @@ extern "C" void Solve()
                     rhs_sistema(global_row, 0) = bc.value;
                     break;
                 case BCType::DISPLACEMENT:
-                    // TODO: Handle non homogeneous displacement
-                    rhs_sistema(global_row, 0) = 0;
-                    // k_sistema(global_row, global_row) = 1e33;
+                    rhs_sistema(global_row, 0) = bc.value;
                     for (std::size_t i = 0; i < nodes.Size() * 2; i++)
                     {
                         k_sistema(global_row, i) = i != global_row ? 0 : 1;
