@@ -74,7 +74,7 @@ MatrixD GetTrussElementStiffnes(const Vector<Node>& nodes, const Element& elemen
     const auto node_i = nodes[element.node_id_i];
     const auto node_f = nodes[element.node_id_f];
 
-    const auto theta = (node_f.pos - node_i.pos).angleBetween(Vector2D{ 1.0, 0.0 });
+    const auto theta = Vector2D{ 1.0, 0.0 }.angleBetween(node_f.pos - node_i.pos);
 
     const auto C = cos(theta);
     const auto S = sin(theta);
